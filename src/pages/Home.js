@@ -1,9 +1,9 @@
-import FirstText from "../components/Landing_page/FirstText";
+import Section from "../components/Landing_page/Section";
 
 const Home = () => {
   return (
     <div>
-      <FirstText />
+      <Section />
     </div>
   );
 };

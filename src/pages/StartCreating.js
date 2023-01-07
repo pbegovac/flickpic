@@ -1,5 +1,11 @@
+import GenerateImageForm from "../components/Generator/GenerateImageForm";
+
 const StartCreating = () => {
-  return <div>Start creating</div>;
+  return (
+    <div>
+      <GenerateImageForm />
+    </div>
+  );
 };
 
 export default StartCreating;

@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
-import classes from "./MainNavigation.module.css";
 import { useState } from "react";
+import {
+  Header,
+  Navigation,
+  UnorderedList,
+  ListElement,
+  Paragraph,
+} from "../tailwind/TailwindNavigation";
 
 const MainNavigation = () => {
   const [whenUserIsSignedOut, whenUserIsSignedIn] = useState(false);
@@ -14,45 +20,45 @@ const MainNavigation = () => {
   };
 
   return (
-    <header className={classes.header}>
-      <Link to="/home" className={classes.logo} />
-      <nav className={classes.pagesLinks}>
-        <ul className={classes.navList}>
-          <li className={classes.listElement}>
-            <Link to="/" className={classes.links}>
-              Start Creating!
+    <Header>
+      <Link to="/home">
+        <Paragraph>Home: Flickpic AI</Paragraph>
+      </Link>
+      <Navigation>
+        <UnorderedList>
+          <ListElement>
+            <Link to="/">
+              <Paragraph>Start Creating!</Paragraph>
             </Link>
-          </li>
-          <li className={classes.listElement}>
-            <Link to="/pricing" className={classes.links}>
-              Pricing
+          </ListElement>
+          <ListElement>
+            <Link to="/pricing">
+              <Paragraph>Pricing</Paragraph>
             </Link>
-          </li>
-          <li className={classes.listElement}>
-            <Link to="/FAQ" className={classes.links}>
-              FAQ
+          </ListElement>
+          <ListElement>
+            <Link to="/FAQ">
+              <Paragraph>FAQ</Paragraph>
             </Link>
-          </li>
-          <li className={classes.listElement}>
-            <Link to="/BLOG" className={classes.links}>
-              BLOG
+          </ListElement>
+          <ListElement>
+            <Link to="/BLOG">
+              <Paragraph>BLOG</Paragraph>
             </Link>
-          </li>
+          </ListElement>
           {whenUserIsSignedOut && (
-            <li className={classes.listElement}>
-              <Link to="/home" className={classes.links} onClick={removeLogout}>
-                Logout
+            <ListElement>
+              <Link to="/home" onClick={removeLogout}>
+                <Paragraph>Logout</Paragraph>
               </Link>
-            </li>
+            </ListElement>
           )}
-          <Link
-            to="/login"
-            className={classes.loginElement}
-            onClick={showLogout}
-          />
-        </ul>
-      </nav>
-    </header>
+          <Link to="/login" onClick={showLogout}>
+            <Paragraph>Login</Paragraph>
+          </Link>
+        </UnorderedList>
+      </Navigation>
+    </Header>
   );
 };
 
