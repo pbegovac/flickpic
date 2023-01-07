@@ -1,6 +1,6 @@
 export const Header = (props) => {
   return (
-    <header className="h-20 fixed w-header bg-gradient-to-r from-darkgreen to-darkergreen flex justify-around items-center">
+    <header className="h-20 shadow-md fixed w-header bg-gradient-to-r from-darkgreen to-darkergreen flex justify-around items-center">
       {props.children}
     </header>
   );
