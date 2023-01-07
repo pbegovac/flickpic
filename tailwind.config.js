@@ -7,9 +7,11 @@ module.exports = {
     width: {
       header: "100%",
       150: "150px",
+      500: "500px",
       700: "700px",
     },
     colors: {
+      fossil: "#787276",
       black: "#28313B",
       gray: "#485461",
       darkgreen: "#306844",
