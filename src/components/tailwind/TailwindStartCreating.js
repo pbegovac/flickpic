@@ -1,6 +1,6 @@
 export const Background = (props) => {
   return (
-    <main className="h-screen bg-gradient-to-r from-darkgreen to-darkergreen flex justify-center items-center flex-col">
+    <main className="h-screen bg-gradient-to-r from-green to-blue flex justify-center items-center flex-col">
       {props.children}
     </main>
   );
