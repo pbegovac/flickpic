@@ -2,9 +2,9 @@ import MainNavigation from "../navigation/MainNavigation";
 
 const Layout = ({ children }) => {
   return (
-    <div className="h-screen">
+    <div className="bg-pantone">
       <MainNavigation />
-      <main className="h-screen">{children}</main>
+      <main className="h-85">{children}</main>
     </div>
   );
 };

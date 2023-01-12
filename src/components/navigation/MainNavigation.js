@@ -13,7 +13,7 @@ const MainNavigation = () => {
   };
 
   return (
-    <header className="h-1/6 shadow-md w-header opacity-80 bg-gradient-to-r from-nightTurquoise  to-maastrichtBlue flex justify-around items-center">
+    <header className="h-15 shadow-md w-header opacity-80 bg-gradient-to-r from-nightTurquoise  to-maastrichtBlue flex justify-around items-center">
       <Link to="/home">
         <p className="paragraph">Home: Flickpic AI</p>
       </Link>
