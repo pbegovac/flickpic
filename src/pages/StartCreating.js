@@ -1,11 +1,10 @@
-import GenerateImageForm from "../components/Generator/GenerateImageForm";
+import GenerateImage from "../components/Generator/GenerateImage";
 
 const StartCreating = () => {
-  return (
-    <div>
-      <GenerateImageForm />
-    </div>
-  );
+  const addFormHandler = (data) => {
+    fetch("Lukin url");
+  };
+  return <GenerateImage onSubmit={addFormHandler} />;
 };
 
 export default StartCreating;

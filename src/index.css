@@ -8,6 +8,6 @@
   padding: 0;
 }
 
-.box {
-  @apply bg-fossil w-150 h-20 flex justify-center items-center rounded cursor-pointer hover:opacity-80 hover:scale-105 text-pantone;
+.paragraph {
+  @apply text-lightwhite font-extrabold font-mono hover:opacity-50;
 }
