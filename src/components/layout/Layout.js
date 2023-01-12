@@ -1,10 +1,10 @@
 import MainNavigation from "../navigation/MainNavigation";
 
-const Layout = (props) => {
+const Layout = ({ children }) => {
   return (
     <div className="h-screen">
       <MainNavigation />
-      <main className="h-5/6">{props.children}</main>
+      <main className="h-screen">{children}</main>
     </div>
   );
 };

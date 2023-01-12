@@ -9,5 +9,5 @@
 }
 
 .paragraph {
-  @apply text-white font-extrabold font-mono hover:opacity-50;
+  @apply text-lightwhite font-extrabold font-mono hover:opacity-50;
 }

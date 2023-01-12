@@ -4,21 +4,19 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     width: {
-      header: "100%",
       150: "150px",
       300: "300px",
       400: "400px",
       500: "500px",
       700: "700px",
-      thousand: "1000px",
+      1000: "1000px",
     },
     colors: {
       backdrop: "#000000bf",
-      blue: "rgb(26, 130, 249)",
-      green: "rgba(0, 255, 0)",
-      black: "#28313B",
+      maastrichtBlue: "#001B40",
+      nightTurquoise: "#004034",
       pantone: "#fae6fa",
-      white: "#FFFFF7",
+      lightwhite: "#FFFFF7",
     },
     screens: {
       sm: "480px",
