@@ -3,6 +3,22 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    height: {
+      50: "50%",
+      full: "100%",
+
+      15: "15vh",
+      85: "85vh",
+      screen: "100vh",
+
+      40: "40px",
+      150: "150px",
+      300: "300px",
+      400: "400px",
+      500: "500px",
+      700: "700px",
+      1000: "1000px",
+    },
     width: {
       150: "150px",
       300: "300px",
@@ -10,6 +26,8 @@ module.exports = {
       500: "500px",
       700: "700px",
       1000: "1000px",
+      screen: "100vw",
+      full: "100%",
     },
     colors: {
       backdrop: "#000000bf",
