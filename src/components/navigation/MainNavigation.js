@@ -1,12 +1,5 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import {
-  Header,
-  Navigation,
-  UnorderedList,
-  ListElement,
-  Paragraph,
-} from "../tailwind/TailwindNavigation";
 
 const MainNavigation = () => {
   const [whenUserIsSignedOut, whenUserIsSignedIn] = useState(false);
@@ -20,45 +13,50 @@ const MainNavigation = () => {
   };
 
   return (
-    <Header>
+    <header className="h-1/6 shadow-md w-header opacity-80 bg-gradient-to-r from-green  to-blue flex justify-around items-center">
       <Link to="/home">
-        <Paragraph>Home: Flickpic AI</Paragraph>
+        <p className="paragraph">Home: Flickpic AI</p>
       </Link>
-      <Navigation>
-        <UnorderedList>
-          <ListElement>
-            <Link to="/">
-              <Paragraph>Start Creating!</Paragraph>
-            </Link>
-          </ListElement>
-          <ListElement>
-            <Link to="/pricing">
-              <Paragraph>Pricing</Paragraph>
-            </Link>
-          </ListElement>
-          <ListElement>
-            <Link to="/FAQ">
-              <Paragraph>FAQ</Paragraph>
-            </Link>
-          </ListElement>
-          <ListElement>
-            <Link to="/BLOG">
-              <Paragraph>BLOG</Paragraph>
-            </Link>
-          </ListElement>
+      <nav className="h-full flex items-center">
+        <ul className="h-full w-700 flex justify-between items-center">
+          <li>
+            <p className="paragraph">
+              <Link to="/">Start Creating!</Link>
+            </p>
+          </li>
+          <li>
+            <p className="paragraph">
+              <Link to="/pricing">Pricing</Link>
+            </p>
+          </li>
+          <li>
+            <p className="paragraph">
+              <Link to="/FAQ">FAQ</Link>
+            </p>
+          </li>
+
+          <li>
+            <p className="paragraph">
+              <Link to="/BLOG">BLOG</Link>
+            </p>
+          </li>
           {whenUserIsSignedOut && (
-            <ListElement>
-              <Link to="/home" onClick={removeLogout}>
-                <Paragraph>Logout</Paragraph>
-              </Link>
-            </ListElement>
+            <li>
+              <p className="paragraph">
+                <Link to="/home" onClick={removeLogout}>
+                  Logout
+                </Link>
+              </p>
+            </li>
           )}
-          <Link to="/login" onClick={showLogout}>
-            <Paragraph>Login</Paragraph>
-          </Link>
-        </UnorderedList>
-      </Navigation>
-    </Header>
+          <p className="paragraph">
+            <Link to="/login" onClick={showLogout}>
+              Login
+            </Link>
+          </p>
+        </ul>
+      </nav>
+    </header>
   );
 };
 
