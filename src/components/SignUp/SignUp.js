@@ -42,23 +42,25 @@ const SignUp = () => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(values.email)) {
-    } else {
+    const resultOne = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+      values.email
+    );
+    const patternTwo = new RegExp(inputs[1].pattern);
+    const resultTwo = patternTwo.test(values.password);
+
+    if (resultOne === false) {
       return;
     }
 
-    if (
-      /(?=[A-Za-z0-9@#$%^&+!=]+$)^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+!=])(?=.{8,}).*$/.test(
-        values.password
-      )
-    ) {
-    } else {
+    if (resultTwo === false) {
       return;
     }
 
     if (values.confirmPassword !== values.password) {
       return;
     }
+
+    console.log({ ...values });
   };
 
   const onChange = (e) => {
@@ -82,7 +84,6 @@ const SignUp = () => {
             <FormInput
               key={input.id}
               {...input}
-              //take error Message from here and say that if the error message is shown - return function (dont submit it)
               value={values[input.name]}
               onChange={onChange}
             />

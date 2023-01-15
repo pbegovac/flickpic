@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const FormInput = ({ label, onChange, errorMessage, id, ...inputProps }) => {
   const [errorIsShown, setErrorIsShown] = useState(false);
+
   const handleFocus = () => {
     setErrorIsShown(true);
   };
@@ -21,7 +22,6 @@ const FormInput = ({ label, onChange, errorMessage, id, ...inputProps }) => {
         }}
         focused={errorIsShown.toString()}
       />
-
       <span className="hidden py-2 text-red w-400 text-sm">{errorMessage}</span>
     </div>
   );
