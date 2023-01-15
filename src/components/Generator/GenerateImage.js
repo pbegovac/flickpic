@@ -7,32 +7,45 @@ const GenerateImage = ({ onSubmit }) => {
   const [areImagesShown, setImagesAsShown] = useState(false);
   const [inputTextValue, setInputTextValue] = useState("");
   const [inputGuidanceValue, setGuidanceValue] = useState(10);
+  const [errorIsShown, setErrorIsShown] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
     setImagesAsShown(true);
 
+    if (inputTextValue === "") {
+      setErrorIsShown(true);
+      setImagesAsShown(false);
+      return;
+    } else setErrorIsShown(false);
+
     const data = {
-      text: inputTextValue,
+      value: inputTextValue,
     };
 
     onSubmit(data);
   };
 
   return (
-    <div className="h-full bg-pantone pt-10 ">
+    <div className="pt-10">
       <div className="flex justify-center items-start mb-20">
-        <form onSubmit={submitHandler}>
-          <input
-            className="w-1000 h-40 border rounded outline-0 pl-2"
-            type="text"
-            required
-            onChange={(e) => setInputTextValue(e.target.value)}
-            //if input value is "" put just return
-          />
-          <button className="bg-nightTurquoise h-40 rounded w-150 ml-2 text-lightwhite hover:opacity-80 hover:bg-maastrichtBlue ">
-            Generate Image
-          </button>
+        <form className="flex flex-col" onSubmit={submitHandler} noValidate>
+          <div>
+            <input
+              className="w-1000 h-40 rounded-md pl-2 outline-0 font-semibold"
+              type="text"
+              placeholder="Enter your text"
+              onChange={(e) => setInputTextValue(e.target.value)}
+            />
+            <button className="bg-nightTurquoise h-40 rounded w-150 ml-4 text-white hover:opacity-80 ">
+              Generate
+            </button>
+          </div>
+          {errorIsShown && (
+            <span className="py-2 text-red text-xs">
+              This field is required
+            </span>
+          )}
         </form>
       </div>
       {areImagesShown && (

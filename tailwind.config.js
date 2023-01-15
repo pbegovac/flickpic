@@ -4,15 +4,20 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     height: {
+      10: "10%",
+      20: "20%",
       50: "50%",
       full: "100%",
 
       15: "15vh",
+      75: "75vh",
       85: "85vh",
       screen: "100vh",
 
       40: "40px",
+      120: "120px",
       150: "150px",
+      170: "170px",
       300: "300px",
       400: "400px",
       500: "500px",
@@ -25,6 +30,7 @@ module.exports = {
       400: "400px",
       500: "500px",
       700: "700px",
+      800: "800px",
       1000: "1000px",
       screen: "100vw",
       full: "100%",
@@ -33,8 +39,10 @@ module.exports = {
       backdrop: "#000000bf",
       maastrichtBlue: "#001B40",
       nightTurquoise: "#004034",
-      pantone: "#fae6fa",
-      lightwhite: "#FFFFF7",
+      white: "#ffffff",
+      errorRed: "#FF9494",
+      red: "#FF0000",
+      lightgray: "#AEAEAE",
     },
     screens: {
       sm: "480px",
