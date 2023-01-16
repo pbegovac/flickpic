@@ -1,5 +1,11 @@
+import SignUp from "../components/SignUp/SignUp";
+
 const Login = () => {
-  return <div>Login</div>;
+  return (
+    <div className="h-full">
+      <SignUp />
+    </div>
+  );
 };
 
 export default Login;

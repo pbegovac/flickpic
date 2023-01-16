@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,6 +11,24 @@
   padding: 0;
 }
 
+body {
+  font-family: "Lato", "Montserrat", sans-serif;
+  background: linear-gradient(
+      222deg,
+      rgba(26, 130, 249, 0.8),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(121deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%);
+}
+
 .paragraph {
-  @apply text-lightwhite font-extrabold font-mono hover:opacity-50;
+  @apply text-white hover:opacity-50;
+}
+
+input:invalid[focused="true"] {
+  border: 1px solid red;
+}
+
+input:invalid[focused="true"] ~ span {
+  display: block;
 }

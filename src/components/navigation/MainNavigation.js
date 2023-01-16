@@ -13,7 +13,7 @@ const MainNavigation = () => {
   };
 
   return (
-    <header className="h-15 shadow-md w-header opacity-80 bg-gradient-to-r from-nightTurquoise  to-maastrichtBlue flex justify-around items-center">
+    <header className="h-15 shadow-md w-header opacity-80  flex justify-around items-center">
       <Link to="/home">
         <p className="paragraph">Home: Flickpic AI</p>
       </Link>
@@ -21,7 +21,7 @@ const MainNavigation = () => {
         <ul className="h-full w-700 flex justify-between items-center">
           <li>
             <p className="paragraph">
-              <Link to="/">Start Creating!</Link>
+              <Link to="/">Start Creating❗</Link>
             </p>
           </li>
           <li>
