@@ -4,23 +4,23 @@ import swimming from "../../images/swimming.jpeg";
 import violin from "../../images/violin.jpeg";
 
 const GenerateImage = ({ onSubmit }) => {
-  const [areImagesShown, setImagesAsShown] = useState(false);
+  const [areImagesShown, setImagesAreShown] = useState(false);
   const [inputTextValue, setInputTextValue] = useState("");
   const [inputGuidanceValue, setGuidanceValue] = useState(10);
   const [errorIsShown, setErrorIsShown] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setImagesAsShown(true);
+    setImagesAreShown(true);
 
     if (inputTextValue === "") {
       setErrorIsShown(true);
-      setImagesAsShown(false);
+      setImagesAreShown(false);
       return;
     } else setErrorIsShown(false);
 
     const data = {
-      value: inputTextValue,
+      valueText: inputTextValue,
     };
 
     onSubmit(data);
