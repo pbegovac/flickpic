@@ -3,13 +3,13 @@ import Images from "./Images";
 import swimming from "../../images/swimming.jpeg";
 import violin from "../../images/violin.jpeg";
 import GuidanceScale from "./GuidanceScale";
-import Loader from "./Loader";
+import Loading from "./Loading";
 
 const GenerateImage = ({ onSubmit }) => {
   const [areImagesShown, setImagesAreShown] = useState(false);
   const [inputTextValue, setInputTextValue] = useState("");
   const [errorIsShown, setErrorIsShown] = useState(false);
-  const [showLoader, setLoaderIsShown] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -20,10 +20,10 @@ const GenerateImage = ({ onSubmit }) => {
       return;
     } else {
       setErrorIsShown(false);
-      setLoaderIsShown(true);
+      setLoading(true);
       setTimeout(() => {
         setImagesAreShown(true);
-        setLoaderIsShown(false);
+        setLoading(false);
       }, 5000);
     }
 
@@ -37,7 +37,7 @@ const GenerateImage = ({ onSubmit }) => {
   return (
     <div className="h-full flex flex-col justify-start items-center pt-10">
       <h2 className="text-textBlack font-bold text-5xl w-50 text-center leading-snug pb-10">
-        INPUT YOUR TEXT AND GENERATE YOUR IMAGE BASED ON YOUR PREFERENCES
+        INPUT YOUR TEXT AND GENERATE YOUR IMAGES BASED ON YOUR PREFERENCES
       </h2>
       <form
         className="flex flex-col items-center w-800"
@@ -62,8 +62,7 @@ const GenerateImage = ({ onSubmit }) => {
         )}
       </form>
       <GuidanceScale />
-      {showLoader && <Loader />}
-
+      {loading && <Loading />}
       {areImagesShown && (
         <div className="flex w-full justify-around items-center mt-10">
           <Images src={swimming} alt="First" />

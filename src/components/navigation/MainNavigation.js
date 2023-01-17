@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import logo from "../../images/FlickPic.png";
-import IconSVG from "./iconSVG";
+import LoginIcon from "./LoginIcon";
 
 const MainNavigation = () => {
   const [whenUserIsSignedOut, whenUserIsSignedIn] = useState(false);
@@ -60,7 +60,7 @@ const MainNavigation = () => {
       <div>
         <p className="paragraph">
           <Link to="/login" onClick={showLogout}>
-            <IconSVG />
+            <LoginIcon />
           </Link>
         </p>
       </div>
