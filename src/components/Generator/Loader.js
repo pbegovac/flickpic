@@ -1,4 +1,4 @@
-const Loading = () => {
+const Loader = () => {
   return (
     <div className="my-32">
       <div className="loading-spinner w-180 animate-spin-slower rounded-full h-180 flex justify-center items-center">
@@ -8,4 +8,4 @@ const Loading = () => {
   );
 };
 
-export default Loading;
+export default Loader;

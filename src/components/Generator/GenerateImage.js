@@ -3,7 +3,7 @@ import Images from "./Images";
 import swimming from "../../images/swimming.jpeg";
 import violin from "../../images/violin.jpeg";
 import GuidanceScale from "./GuidanceScale";
-import Loading from "./Loading";
+import Loader from "./Loader";
 
 const GenerateImage = ({ onSubmit }) => {
   const [areImagesShown, setImagesAreShown] = useState(false);
@@ -62,7 +62,7 @@ const GenerateImage = ({ onSubmit }) => {
         )}
       </form>
       <GuidanceScale />
-      {loading && <Loading />}
+      {loading && <Loader />}
       {areImagesShown && (
         <div className="flex w-full justify-around items-center mt-10">
           <Images src={swimming} alt="First" />
