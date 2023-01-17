@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Harmattan&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -12,23 +14,44 @@
 }
 
 body {
-  font-family: "Lato", "Montserrat", sans-serif;
-  background: linear-gradient(
-      222deg,
-      rgba(26, 130, 249, 0.8),
-      rgba(255, 0, 0, 0) 70.71%
-    ),
-    linear-gradient(121deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%);
+  font-family: "Fredoka One", "Lato", "Montserrat", sans-serif;
+  background: #f1f6f7;
 }
 
 .paragraph {
-  @apply text-white hover:opacity-50;
+  @apply text-textBlack hover:opacity-60 font-thin;
 }
 
 input:invalid[focused="true"] {
-  border: 1px solid red;
+  border: 1px solid #ff9494;
 }
 
 input:invalid[focused="true"] ~ span {
   display: block;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border-radius: 1.5rem;
+  height: 0.813rem;
+  width: 0.813rem;
+  background: #77d2f7;
+  box-shadow: -600px 0 0 590px #77d2f7;
+  cursor: pointer;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  background: linear-gradient(
+    90deg,
+    rgba(247, 69, 101, 1) 0%,
+    rgba(241, 246, 247, 1) 60%
+  );
 }

@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import logo from "../../images/FlickPic.png";
+import IconSVG from "./iconSVG";
 
 const MainNavigation = () => {
   const [whenUserIsSignedOut, whenUserIsSignedIn] = useState(false);
@@ -13,12 +15,16 @@ const MainNavigation = () => {
   };
 
   return (
-    <header className="h-15 shadow-md w-header opacity-80  flex justify-around items-center">
-      <Link to="/home">
-        <p className="paragraph">Home: Flickpic AI</p>
+    <header className="h-12 flex justify-around items-center">
+      <Link to="/home" className="h-full flex justify-center items-center">
+        <img
+          src={logo}
+          className="h-70 bg-center hover:opacity-60"
+          alt="Flickpic logo"
+        />
       </Link>
-      <nav className="h-full flex items-center">
-        <ul className="h-full w-700 flex justify-between items-center">
+      <nav className="h-full w-30">
+        <ul className="h-full w-full flex justify-between items-center">
           <li>
             <p className="paragraph">
               <Link to="/">Start Creating❗</Link>
@@ -49,13 +55,15 @@ const MainNavigation = () => {
               </p>
             </li>
           )}
-          <p className="paragraph">
-            <Link to="/login" onClick={showLogout}>
-              Login
-            </Link>
-          </p>
         </ul>
       </nav>
+      <div>
+        <p className="paragraph">
+          <Link to="/login" onClick={showLogout}>
+            <IconSVG />
+          </Link>
+        </p>
+      </div>
     </header>
   );
 };

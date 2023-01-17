@@ -12,14 +12,26 @@ const Images = ({ src, alt }) => {
   };
 
   return (
-    <div className="flex justify-around items-center w-500 h-400 cursor-pointer ">
-      <img className="w-full h-full" src={src} alt={alt} onClick={scaleUp} />
+    <div className="flex flex-col justify-center items-center w-fortyVW h-75 cursor-pointer mb-5">
+      <div className="w-full h-full">
+        <img
+          className="w-full h-full rounded-3xl bg-center"
+          src={src}
+          alt={alt}
+          onClick={scaleUp}
+        />
+      </div>
+      <div className="w-fortyVW flex justify-end py-6">
+        <button className="h-33 w-58 text-sm bg-buttonBG font-Harmattan text-white font-bold rounded-3xl hover:opacity-80 ">
+          CLAIM
+        </button>
+      </div>
       {areImagesScaledUp && (
         <div
           onClick={scaleDown}
           className="fixed flex justify-center items-center z-10 bg-backdrop min-w-full h-full top-0 left-0"
         >
-          <img className="w-700 h-700" src={src} alt={alt} />
+          <img className="w-700 h-700  rounded-3xl" src={src} alt={alt} />
         </div>
       )}
     </div>

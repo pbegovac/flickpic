@@ -91,7 +91,7 @@ const SignUp = () => {
           <p className="text-lightgray underline cursor-pointer">
             Already have an account?
           </p>
-          <button className="bg-nightTurquoise h-40 rounded w-150 text-white hover:opacity-80 ">
+          <button className="bg-nightTurquoise h-40 rounded w-150 text-white hover:opacity-80">
             Sign Up
           </button>
         </div>
