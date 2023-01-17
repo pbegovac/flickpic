@@ -5,7 +5,7 @@ const StartCreating = () => {
     fetch("Lukin url");
   };
   return (
-    <div className="h-85">
+    <div>
       <GenerateImage onSubmit={addFormHandler} />
     </div>
   );

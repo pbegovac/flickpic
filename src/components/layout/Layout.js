@@ -1,10 +1,12 @@
 import MainNavigation from "../navigation/MainNavigation";
+import Footer from "../Footer/Footer";
 
 const Layout = ({ children }) => {
   return (
-    <div className="bg-pantone">
+    <div className="h-auto">
       <MainNavigation />
-      <main className="h-85">{children}</main>
+      <main className="min-h-screen">{children}</main>
+      <Footer />
     </div>
   );
 };

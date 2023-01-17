@@ -2,22 +2,30 @@ import { useState } from "react";
 import Images from "./Images";
 import swimming from "../../images/swimming.jpeg";
 import violin from "../../images/violin.jpeg";
+import GuidanceScale from "./GuidanceScale";
+import Loader from "./Loader";
 
 const GenerateImage = ({ onSubmit }) => {
   const [areImagesShown, setImagesAreShown] = useState(false);
   const [inputTextValue, setInputTextValue] = useState("");
-  const [inputGuidanceValue, setGuidanceValue] = useState(10);
   const [errorIsShown, setErrorIsShown] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setImagesAreShown(true);
 
     if (inputTextValue === "") {
       setErrorIsShown(true);
       setImagesAreShown(false);
       return;
-    } else setErrorIsShown(false);
+    } else {
+      setErrorIsShown(false);
+      setLoading(true);
+      setTimeout(() => {
+        setImagesAreShown(true);
+        setLoading(false);
+      }, 5000);
+    }
 
     const data = {
       valueText: inputTextValue,
@@ -27,29 +35,36 @@ const GenerateImage = ({ onSubmit }) => {
   };
 
   return (
-    <div className="pt-10">
-      <div className="flex justify-center items-start mb-20">
-        <form className="flex flex-col" onSubmit={submitHandler} noValidate>
-          <div>
-            <input
-              className="w-1000 h-40 rounded-md pl-2 outline-0 font-semibold"
-              type="text"
-              placeholder="Enter your text"
-              onChange={(e) => setInputTextValue(e.target.value)}
-            />
-            <button className="bg-nightTurquoise h-40 rounded w-150 ml-4 text-white hover:opacity-80 ">
-              Generate
-            </button>
-          </div>
-          {errorIsShown && (
-            <span className="py-2 text-red text-xs">
-              This field is required
-            </span>
-          )}
-        </form>
-      </div>
+    <div className="h-full flex flex-col justify-start items-center pt-10">
+      <h2 className="text-textBlack font-bold text-5xl w-50 text-center leading-snug pb-10">
+        INPUT YOUR TEXT AND GENERATE YOUR IMAGES BASED ON YOUR PREFERENCES
+      </h2>
+      <form
+        className="flex flex-col items-center w-800"
+        onSubmit={submitHandler}
+        noValidate
+      >
+        <div>
+          <input
+            className="w-600 h-58 text-inputTextColor text-2xl font-Harmattan rounded-3xl pl-5 outline-0 border-2 border-textBlack mr-4"
+            type="text"
+            placeholder="Enter your text here..."
+            onChange={(e) => setInputTextValue(e.target.value)}
+          />
+          <button className="bg-themeRed h-58 rounded-3xl text-lg w-105 font-Harmattan text-white hover:opacity-80 font-bold">
+            GENERATE
+          </button>
+        </div>
+        {errorIsShown && (
+          <p className=" w-721 py-4 text-errorRed text-xs">
+            This field is required
+          </p>
+        )}
+      </form>
+      <GuidanceScale />
+      {loading && <Loader />}
       {areImagesShown && (
-        <div className="flex bg-pantone justify-around items-center">
+        <div className="flex w-full justify-around items-center mt-10">
           <Images src={swimming} alt="First" />
           <Images src={violin} alt="Second" />
         </div>

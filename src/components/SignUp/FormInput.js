@@ -22,7 +22,9 @@ const FormInput = ({ label, onChange, errorMessage, id, ...inputProps }) => {
         }}
         focused={errorIsShown.toString()}
       />
-      <span className="hidden py-2 text-red w-400 text-sm">{errorMessage}</span>
+      <span className="hidden py-2 text-errorRed w-400 text-sm">
+        {errorMessage}
+      </span>
     </div>
   );
 };
