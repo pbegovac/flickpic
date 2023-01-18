@@ -40,7 +40,6 @@ const MainNavigation = () => {
               <Link to="/FAQ">FAQ</Link>
             </p>
           </li>
-
           <li>
             <p className="paragraph">
               <Link to="/BLOG">BLOG</Link>

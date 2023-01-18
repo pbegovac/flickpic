@@ -19,11 +19,12 @@ const GenerateImage = ({ onSubmit }) => {
       setImagesAreShown(false);
       return;
     } else {
+      setImagesAreShown(false);
       setErrorIsShown(false);
       setLoading(true);
       setTimeout(() => {
-        setImagesAreShown(true);
         setLoading(false);
+        setImagesAreShown(true);
       }, 5000);
     }
 
