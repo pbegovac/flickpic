@@ -4,9 +4,9 @@ const GuidanceScale = () => {
   const [guidanceValue, setGuidanceValue] = useState(10);
 
   return (
-    <div className="flex w-721 py-10">
+    <div className="w-full flex justify-around items-center my-10 px-80">
       <form className="flex flex-col items-start justify-end">
-        <label className="text-textBlack text-center pb-2" htmlFor="range">
+        <label className="text-textBlack text-center mb-2" htmlFor="range">
           Guidance Scale
         </label>
         <input
@@ -18,10 +18,10 @@ const GuidanceScale = () => {
           onChange={(e) => {
             setGuidanceValue(e.target.value);
           }}
-          className="range overflow-hidden bg-white w-600 rounded-3xl h-13 border appearance-none border-themeBlue"
+          className="range overflow-hidden bg-white w-500 rounded-3xl h-13 border appearance-none border-themeBlue"
         />
       </form>
-      <div className="w-full h-auto flex items-center justify-center">
+      <div className="flex items-center">
         <p>{guidanceValue}</p>
       </div>
     </div>

@@ -45,7 +45,7 @@ const MainNavigation = () => {
               <Link to="/BLOG">BLOG</Link>
             </p>
           </li>
-          {whenUserIsSignedOut && (
+          {/* {whenUserIsSignedOut && (
             <li>
               <p className="paragraph">
                 <Link to="/home" onClick={removeLogout}>
@@ -53,7 +53,7 @@ const MainNavigation = () => {
                 </Link>
               </p>
             </li>
-          )}
+          )} */}
         </ul>
       </nav>
       <div>

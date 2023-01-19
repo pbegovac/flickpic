@@ -2,7 +2,15 @@ import GenerateImage from "../components/Generator/GenerateImage";
 
 const StartCreating = () => {
   const addFormHandler = (data) => {
-    fetch("Lukin url");
+    console.log(data);
+    // fetch("http://localhost:8080/posts", {
+    //   method: "POST",
+    //   body: JSON.stringify(data),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   mode: "no-cors",
+    // });
   };
   return (
     <div>

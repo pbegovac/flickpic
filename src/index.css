@@ -36,7 +36,7 @@ input:invalid[focused="true"] ~ span {
   height: 0.813rem;
   width: 0.813rem;
   background: #77d2f7;
-  box-shadow: -600px 0 0 590px #77d2f7;
+  box-shadow: -500px 0 0 495px #77d2f7;
   cursor: pointer;
 }
 
@@ -54,4 +54,8 @@ input:invalid[focused="true"] ~ span {
     rgba(247, 69, 101, 1) 0%,
     rgba(241, 246, 247, 1) 60%
   );
+}
+
+.dropdownbuttons {
+  @apply py-4 rounded-3xl text-lg font-Harmattan text-white hover:opacity-80 font-bold  w-116;
 }
