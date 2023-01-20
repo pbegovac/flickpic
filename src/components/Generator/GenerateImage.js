@@ -8,7 +8,6 @@ import Dropdown from "./Dropdown";
 
 const GenerateImage = ({ onSubmit }) => {
   const [areImagesShown, setImagesAreShown] = useState(false);
-  const [inputTextValue, setInputTextValue] = useState("");
   const [errorIsShown, setErrorIsShown] = useState(false);
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
@@ -19,7 +18,7 @@ const GenerateImage = ({ onSubmit }) => {
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if (inputTextValue === "") {
+    if (data.valueText === "") {
       setErrorIsShown(true);
       setImagesAreShown(false);
       return;
@@ -36,10 +35,6 @@ const GenerateImage = ({ onSubmit }) => {
     onSubmit(data);
   };
 
-  const getType = (e) => {
-    setData({ valueText: inputTextValue, typeValue: e.target.innerHTML });
-  };
-
   return (
     <div className="h-full flex flex-col justify-start items-center pt-10 ">
       <h2 className="text-textBlack font-bold text-5xl text-center leading-snug pb-10 px-80">
@@ -52,12 +47,19 @@ const GenerateImage = ({ onSubmit }) => {
       >
         <div className="w-full flex justify-between items-center">
           <input
+            name="valueText"
             className="w-70 py-2 h-full text-inputTextColor text-2xl font-Harmattan rounded-3xl pl-5 outline-0 border-2 border-textBlack"
             type="text"
             placeholder="Enter your text here..."
-            onChange={(e) => setInputTextValue(e.target.value)}
+            onChange={(e) =>
+              setData({ ...data, [e.target.name]: e.target.value })
+            }
           />
-          <Dropdown addType={getType} />
+          <Dropdown
+            addType={(e) => {
+              setData({ ...data, [e.target.name]: e.target.innerHTML });
+            }}
+          />
           <button className="bg-themeRed py-4 px-6 rounded-3xl text-lg font-Harmattan text-white hover:opacity-80 font-bold">
             GENERATE
           </button>

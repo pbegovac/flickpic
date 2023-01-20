@@ -17,18 +17,23 @@ const Dropdown = ({ addType }) => {
       <DropdownButton
         className="bg-themeBlue dropdownbuttons"
         onClick={dropdownHandler}
-        children={"TYPE"}
+        children={"NORMAL"}
       />
       {dropdownIsShown && (
         <div className="absolute flex flex-col">
           <DropdownButton
-            className="bg-themeYellow dropdownbuttons"
+            className="bg-themeRed dropdownbuttons"
             children={"CARTOON"}
             onClick={addType}
           />
           <DropdownButton
-            className="bg-themeRed dropdownbuttons"
+            className="bg-themeYellow dropdownbuttons"
             children={"COMIC"}
+            onClick={addType}
+          />
+          <DropdownButton
+            className="bg-themeBlue dropdownbuttons"
+            children={"LINKEDIN"}
             onClick={addType}
           />
         </div>

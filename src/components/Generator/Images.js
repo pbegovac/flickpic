@@ -10,7 +10,6 @@ const Images = ({ src, alt }) => {
   const scaleDown = () => {
     setImagesScaledUp(false);
   };
-
   return (
     <div className="w-50">
       <div className="w-full flex flex-col justify-end items-center">
@@ -26,7 +25,6 @@ const Images = ({ src, alt }) => {
           </button>
         </div>
       </div>
-
       {areImagesScaledUp && (
         <div
           onClick={scaleDown}
