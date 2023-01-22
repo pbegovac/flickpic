@@ -4,21 +4,25 @@ import swimming from "../../images/swimming.jpeg";
 import violin from "../../images/violin.jpeg";
 import GuidanceScale from "./GuidanceScale";
 import Loader from "./Loader";
-import Dropdown from "./Dropdown";
+
+import CategoryDropdown from "./CategoryDropdown";
 
 const GenerateImage = ({ onSubmit }) => {
   const [areImagesShown, setImagesAreShown] = useState(false);
   const [errorIsShown, setErrorIsShown] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState({
-    valueText: "",
-    typeValue: "",
+  const [inputTextValue, setInputTextValue] = useState("");
+  const [guidanceValue, setGuidanceValue] = useState("5");
+  const [category, setCategory] = useState({
+    id: 1,
+    value: "NORMAL",
+    color: "themeYellow",
   });
 
   const submitHandler = (e) => {
     e.preventDefault();
 
-    if (data.valueText === "") {
+    if (inputTextValue === "") {
       setErrorIsShown(true);
       setImagesAreShown(false);
       return;
@@ -32,34 +36,34 @@ const GenerateImage = ({ onSubmit }) => {
       }, 2000);
     }
 
+    const data = {
+      valueText: inputTextValue,
+      guidanceValue: guidanceValue,
+      category: category.value,
+    };
+
     onSubmit(data);
   };
 
   return (
     <div className="h-full flex flex-col justify-start items-center pt-10 ">
       <h2 className="text-textBlack font-bold text-5xl text-center leading-snug pb-10 px-80">
-        FLIP YOUR THOUGHTS INTO UNIQUE AI IMAGES
+        FLICK YOUR THOUGHTS INTO UNIQUE AI IMAGES
       </h2>
       <form
-        className="flex flex-col items-center w-60"
+        className="flex flex-col items-start w-60"
         onSubmit={submitHandler}
         noValidate
       >
-        <div className="w-full flex justify-between items-center">
+        <div className="w-full flex justify-between items-start">
           <input
             name="valueText"
             className="w-70 py-2 h-full text-inputTextColor text-2xl font-Harmattan rounded-3xl pl-5 outline-0 border-2 border-textBlack"
             type="text"
             placeholder="Enter your text here..."
-            onChange={(e) =>
-              setData({ ...data, [e.target.name]: e.target.value })
-            }
+            onChange={(e) => setInputTextValue(e.target.value)}
           />
-          <Dropdown
-            addType={(e) => {
-              setData({ ...data, [e.target.name]: e.target.innerHTML });
-            }}
-          />
+          <CategoryDropdown category={category} setCategory={setCategory} />
           <button className="bg-themeRed py-4 px-6 rounded-3xl text-lg font-Harmattan text-white hover:opacity-80 font-bold">
             GENERATE
           </button>
@@ -70,7 +74,10 @@ const GenerateImage = ({ onSubmit }) => {
           </p>
         )}
       </form>
-      <GuidanceScale />
+      <GuidanceScale
+        guidanceValue={guidanceValue}
+        setGuidanceValue={setGuidanceValue}
+      />
       {loading && <Loader />}
       {areImagesShown && (
         <div className="flex items-center min-h-screen w-full">

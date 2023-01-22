@@ -3,6 +3,9 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    inset: {
+      29: "29%",
+    },
     animation: {
       "spin-slower": "spin 2.5s linear infinite",
     },
@@ -41,8 +44,9 @@ module.exports = {
     },
     colors: {
       themeRed: "#F74565",
-      themeBlue: "#77D2F7",
       themeYellow: "#F7EE60",
+      themeBlue: "#77D2F7",
+
       textBlack: "#0D1112",
       backdrop: "#000000bf",
       errorRed: "#FF9494",
