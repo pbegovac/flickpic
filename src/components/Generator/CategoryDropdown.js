@@ -20,15 +20,12 @@ const CategoryDropdown = ({ category, setCategory }) => {
       <h1
         className={`bg-${category.color} dropdownList`}
         onClick={() => {
-          setDropdownIsShown(true);
+          setDropdownIsShown(!dropdownIsShown);
           setCategoriesCopy(
             categoriesCopy.filter(
               (sameElement) => sameElement.id !== category.id
             )
           );
-          if (dropdownIsShown) {
-            setDropdownIsShown(false);
-          }
         }}
       >
         {category.value}
