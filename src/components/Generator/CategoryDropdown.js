@@ -1,19 +1,8 @@
 import { useState } from "react";
+import { categories } from "../../utils/categories";
 
 const CategoryDropdown = ({ category, setCategory }) => {
   const [dropdownIsShown, setDropdownIsShown] = useState(false);
-
-  const categories = [
-    {
-      id: 1,
-      value: "NORMAL",
-      color: "themeYellow",
-    },
-    { id: 2, value: "CARTOON", color: "themeBlue" },
-    { id: 3, value: "COMIC", color: "themeRed" },
-  ];
-
-  const [categoriesCopy, setCategoriesCopy] = useState([...categories]);
 
   return (
     <div className="absolute right-29">
@@ -21,31 +10,27 @@ const CategoryDropdown = ({ category, setCategory }) => {
         className={`bg-${category.color} dropdownList`}
         onClick={() => {
           setDropdownIsShown(!dropdownIsShown);
-          setCategoriesCopy(
-            categoriesCopy.filter(
-              (sameElement) => sameElement.id !== category.id
-            )
-          );
         }}
       >
         {category.value}
       </h1>
       {dropdownIsShown && (
         <ul>
-          {categoriesCopy.map((category) => {
-            return (
-              <li
-                key={category.id}
-                className={`bg-${category.color} dropdownList`}
-                onClick={() => {
-                  setCategory(category);
-                  setCategoriesCopy([...categories]);
-                  setDropdownIsShown(false);
-                }}
-              >
-                {category.value}
-              </li>
-            );
+          {categories.map((item) => {
+            if (item.id !== category.id) {
+              return (
+                <li
+                  key={item.id}
+                  className={`bg-${item.color} dropdownList`}
+                  onClick={() => {
+                    setCategory(item);
+                    setDropdownIsShown(false);
+                  }}
+                >
+                  {item.value}
+                </li>
+              );
+            }
           })}
         </ul>
       )}

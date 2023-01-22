@@ -16,7 +16,7 @@ const GenerateImage = ({ onSubmit }) => {
   const [category, setCategory] = useState({
     id: 1,
     value: "NORMAL",
-    color: "themeYellow",
+    color: "themeRed",
   });
 
   const submitHandler = (e) => {
