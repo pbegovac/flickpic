@@ -14,6 +14,24 @@ const StartCreating = () => {
     //     mode: "no-cors",
     //   }
     // );
+
+    // fetch(
+    //   "https://byo7cq373lffyi556se6cbm6vy0vzpnj.lambda-url.eu-west-1.on.aws/",
+    //   {
+    //     method: "POST",
+    //     body: JSON.stringify({
+    //       prompt: data.valueText,
+    //       style: data.category,
+    //       guidance_scale: data.guidanceValue,
+    //       results: 2,
+    //       num_interence_steps: 50,
+    //     }),
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     mode: "no-cors",
+    //   }
+    // );
   };
   return (
     <div>
