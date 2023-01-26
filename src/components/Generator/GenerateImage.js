@@ -5,7 +5,7 @@ import GuidanceScale from "./GuidanceScale";
 import Loader from "./Loader";
 import { categories } from "../../utils/categories";
 
-const GenerateImage = ({ onSubmit }) => {
+const GenerateImage = ({ onSubmit, src, alt }) => {
   const [areImagesShown, setImagesAreShown] = useState(false);
   const [errorIsShown, setErrorIsShown] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -32,7 +32,7 @@ const GenerateImage = ({ onSubmit }) => {
       setTimeout(() => {
         setLoading(false);
         setImagesAreShown(true);
-      }, 2000);
+      }, 9500);
     }
 
     const data = {
@@ -95,7 +95,7 @@ const GenerateImage = ({ onSubmit }) => {
         setGuidanceValue={setGuidanceValue}
       />
       {loading && <Loader />}
-      {areImagesShown && <Images src={owl1} alt="First" />}
+      {areImagesShown && <Images src={src} alt={alt} />}
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import GenerateImage from "../components/Generator/GenerateImage";
+import { useState } from "react";
 
 const StartCreating = () => {
+  const [imageSrc, setImageSrc] = useState("");
   const addFormHandler = (data) => {
     console.log(data);
     // fetch(
@@ -26,18 +28,20 @@ const StartCreating = () => {
           results: 1,
           num_inference_steps: 10,
         }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "no-cors",
+        headers: {},
+        mode: "cors",
       }
-    ).then((response) => {
-      console.log(response);
-    });
+    )
+      .then((response) => {
+        return response.text();
+      })
+      .then((data) => {
+        setImageSrc(data);
+      });
   };
   return (
     <div>
-      <GenerateImage onSubmit={addFormHandler} />
+      <GenerateImage onSubmit={addFormHandler} src={imageSrc} />
     </div>
   );
 };
