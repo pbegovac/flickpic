@@ -3,88 +3,104 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    animation: {
-      "spin-slower": "spin 2.5s linear infinite",
+    extend: {
+      maxHeight: {
+        52: "3.25rem",
+      },
+      aspectRatio: {
+        "2/3": "2 / 3",
+        "3/4": "3 / 4",
+        "4/5": "4 / 5",
+        "1/2": "1 / 2",
+        "3/2": "3 / 2",
+        "4/3": "4 / 3",
+        "2/1": "2 / 1",
+      },
+      inset: {
+        0: "0%",
+        29: "29%",
+      },
+      animation: {
+        "spin-slower": "spin 2.5s linear infinite",
+      },
+      fontFamily: {
+        Harmattan: ["Harmattan"],
+      },
+      height: {
+        30: "30%",
+        40: "40%",
+        50: "50%",
+        60: "60%",
+        70: "70%",
+        80: "80%",
+
+        90: "90%",
+        full: "100%",
+
+        12: "12vh",
+        screen: "100vh",
+
+        13: "0.813rem",
+        42: "2.625rem",
+        170: "10.625rem",
+        180: "11.25rem",
+
+        250: "15.625rem",
+        300: "18.75rem",
+        500: "31.25rem",
+      },
+      width: {
+        20: "20%",
+        30: "30%",
+        40: "40%",
+        55: "55%",
+
+        50: "50%",
+        60: "60%",
+        70: "70%",
+        80: "80%",
+
+        90: "90%",
+        full: "100%",
+
+        116: "7.25rem",
+        170: "10.625rem",
+        180: "11.25rem",
+        200: "15rem",
+        500: "31.25rem",
+
+        screen: "100vw",
+      },
+      colors: {
+        themeRed: "#F74565",
+        themeYellow: "#F7EE60",
+        themeBlue: "#77D2F7",
+
+        textBlack: "#0D1112",
+        backdrop: "#000000bf",
+        errorRed: "#FF9494",
+        background: "#f1f6f7",
+        lightgray: "#AEAEAE",
+        white: "#ffffff",
+        inputTextColor: "#38494D",
+        buttonBG: "#0D1112",
+        buttonHoover: "#38494D",
+        transparent: "transparent",
+      },
+      screens: {
+        xs: "0px",
+
+        sm: "480px",
+
+        md: "547px",
+
+        lg: "768px",
+
+        xl: "1024px",
+
+        xxl: "1280px",
+      },
     },
-    fontFamily: {
-      Harmattan: ["Harmattan"],
-    },
-    height: {
-      10: "10%",
-      20: "20%",
-      50: "50%",
-      70: "70%",
-      full: "100%",
-
-      12: "12vh",
-      fiftyVH: "50vh",
-      75: "75vh",
-      88: "88vh",
-      screen: "100vh",
-
-      13: "0.813rem",
-      33: "2.063rem",
-      40: "2.5rem",
-      42: "2.625rem",
-      58: "3.625rem",
-      120: "7.5rem",
-      150: "9.375rem",
-      170: "10.625rem",
-      180: "11.25rem",
-      300: "18.75rem",
-      400: "25rem",
-      500: "31.25rem",
-      700: "43.75rem",
-      1000: "62.5rem",
-    },
-    width: {
-      fortyVW: "40vw",
-
-      10: "10%",
-      20: "20%",
-      30: "30%",
-      40: "40%",
-      50: "50%",
-      full: "100%",
-
-      58: "3.625rem",
-      105: "6.563rem",
-      170: "10.625rem",
-      180: "11.25rem",
-      300: "18.75rem",
-      400: "25rem",
-      500: "31.25rem",
-      600: "37.5rem",
-      700: "43.75rem",
-      721: "45.063rem",
-      800: "50rem",
-      screen: "100vw",
-    },
-    colors: {
-      themeRed: "#F74565",
-      themeBlue: "#77D2F7",
-      textBlack: "#0D1112",
-      backdrop: "#000000bf",
-      errorRed: "#FF9494",
-      background: "#f1f6f7",
-      lightgray: "#AEAEAE",
-      white: "#ffffff",
-      inputTextColor: "#38494D",
-      buttonBG: "#0D1112",
-      buttonHoover: "#38494D",
-    },
-    screens: {
-      sm: "480px",
-
-      md: "547px",
-
-      lg: "768px",
-
-      xl: "1024px",
-
-      xxl: "1280px",
-    },
-    extend: {},
   },
   plugins: [],
 };

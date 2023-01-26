@@ -1,39 +1,43 @@
 import { useState } from "react";
+import { imageAspectRatio } from "../../utils/imageAspectRatio";
 
 const Images = ({ src, alt }) => {
-  const [areImagesScaledUp, setImagesScaledUp] = useState(false);
-
-  const scaleUp = () => {
-    setImagesScaledUp(true);
-  };
-
-  const scaleDown = () => {
-    setImagesScaledUp(false);
-  };
+  const [newImageRatio, setNewImageRatio] = useState({
+    id: 1,
+    aspectRatio: "square",
+  });
 
   return (
-    <div className="flex flex-col justify-center items-center w-fortyVW h-75 cursor-pointer mb-5">
-      <div className="w-full h-full">
-        <img
-          className="w-full h-full rounded-3xl bg-center"
-          src={src}
-          alt={alt}
-          onClick={scaleUp}
-        />
-      </div>
-      <div className="w-fortyVW flex justify-end py-6">
-        <button className="h-33 w-58 text-sm bg-buttonBG font-Harmattan text-white font-bold rounded-3xl hover:opacity-80 ">
+    <div className="flex items-center h-screen w-full xs:flex-col xs:justify-center">
+      <img
+        className={`rounded-xl w-30 aspect-${newImageRatio.aspectRatio}`}
+        src={src}
+        alt={alt}
+      />
+
+      {/* <div className=" w-30 flex justify-end mt-3">
+        <button className="p-2 text-sm bg-buttonBG font-Harmattan text-white font-bold rounded-3xl hover:bg-buttonHoover">
           CLAIM
         </button>
+      </div> */}
+
+      <div className=" mt-3 justify-between w-500 hidden">
+        {imageAspectRatio.map((item) => {
+          return (
+            <div className="flex justify-center items-center">
+              <button
+                key={item.id}
+                className="text-white font-Harmattan cursor-pointer border h-full w-full bg-themeRed rounded p-2 hover:opacity-80"
+                onClick={() => {
+                  setNewImageRatio(item);
+                }}
+              >
+                Ratio {item.name}
+              </button>
+            </div>
+          );
+        })}
       </div>
-      {areImagesScaledUp && (
-        <div
-          onClick={scaleDown}
-          className="fixed flex justify-center items-center z-10 bg-backdrop min-w-full h-full top-0 left-0"
-        >
-          <img className="w-700 h-700  rounded-3xl" src={src} alt={alt} />
-        </div>
-      )}
     </div>
   );
 };
