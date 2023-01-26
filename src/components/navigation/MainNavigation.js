@@ -4,22 +4,22 @@ import logo from "../../images/FlickPic.png";
 import LoginIcon from "./LoginIcon";
 
 const MainNavigation = () => {
-  const [showNavigation, setShowNavigation] = useState(true);
+  // const [showNavigation, setShowNavigation] = useState(true);
 
-  const clickHandler = () => {
-    setShowNavigation(!showNavigation);
-  };
+  // const clickHandler = () => {
+  //   setShowNavigation(!showNavigation);
+  // };
 
   return (
     <header className="flex items-center xs:flex-col xs:justify-start xs:h-70 lg:h-12 lg:flex-row lg:justify-around">
-      <Link to="/home" className="h-full flex justify-center items-center">
-        <img
-          src={logo}
-          className="hover:opacity-60 xs:h-12 xs:p-2 lg:h-full"
-          alt="Flickpic logo"
-        />
-      </Link>
-      <div onClick={clickHandler} className="cursor-pointer my-2 lg:hidden">
+      {/* <Link to="/home" className="h-full flex justify-center items-center"> */}
+      <img
+        src={logo}
+        className="xs:h-12 xs:p-2 lg:h-full"
+        alt="Flickpic logo"
+      />
+      {/* </Link> */}
+      {/* <div onClick={clickHandler} className="cursor-pointer my-2 lg:hidden">
         <p>---</p>
       </div>
       {showNavigation && (
@@ -54,7 +54,7 @@ const MainNavigation = () => {
             <LoginIcon />
           </Link>
         </div>
-      )}
+      )} */}
     </header>
   );
 };
