@@ -21,17 +21,19 @@ const StartCreating = () => {
     //     method: "POST",
     //     body: JSON.stringify({
     //       prompt: data.valueText,
-    //       style: data.category,
+    //       style: `<${data.category}>`,
     //       guidance_scale: data.guidanceValue,
-    //       results: 2,
-    //       num_interence_steps: 50,
+    //       results: 1,
+    //       num_inference_steps: 10,
     //     }),
     //     headers: {
     //       "Content-Type": "application/json",
     //     },
     //     mode: "no-cors",
     //   }
-    // );
+    // ).then((response) => {
+    //   console.log(response);
+    // });
   };
   return (
     <div>

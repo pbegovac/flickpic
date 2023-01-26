@@ -21,19 +21,19 @@ const CategoryDropdown = ({ category, setCategory }) => {
   }, []);
 
   return (
-    <div className="relative" ref={toggleElement}>
+    <div className="relative py-3  " ref={toggleElement}>
       {inputIsShown && (
         <input
           type="text"
           placeholder="Select category..."
-          className="w-116 font-Harmattan py-2 outline-none rounded pl-2 absolute"
+          className="w-180 font-Harmattan py-2 outline-none rounded-xl pl-2 absolute"
           value={searchBoxValue}
           onChange={(e) => setSearchBoxValue(e.target.value)}
         />
       )}
       {categoryIsShown && (
         <h1
-          className={`bg-${category.color} w-116 text-center text-white font-Harmattan py-2 rounded `}
+          className={`bg-${category.color} text-center text-white font-Harmattan py-2 rounded-xl cursor-pointer `}
           onClick={() => {
             setInputIsShown(true);
             setDropdownIsShown(true);
@@ -44,7 +44,7 @@ const CategoryDropdown = ({ category, setCategory }) => {
       )}
 
       {dropdownIsShown && (
-        <ul className="absolute max-h-52  overflow-y-scroll">
+        <ul className="absolute max-h-32 overflow-y-scroll">
           {categories
             .filter((item) =>
               item.value.toLowerCase().includes(searchBoxValue.toLowerCase())
@@ -53,7 +53,7 @@ const CategoryDropdown = ({ category, setCategory }) => {
               return (
                 <li
                   key={item.id}
-                  className={`bg-${item.color} w-116 text-center text-white font-Harmattan py-2 rounded`}
+                  className={`bg-${item.color} w-180 text-center text-white font-Harmattan py-2 hover:scale-105 cursor-pointer hover:opacity-80 rounded-xl`}
                   onClick={() => {
                     setCategory(item);
                     setCategoryIsShown(true);

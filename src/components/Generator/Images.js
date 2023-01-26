@@ -1,30 +1,27 @@
 import { useState } from "react";
-
 import { imageAspectRatio } from "../../utils/imageAspectRatio";
 
 const Images = ({ src, alt }) => {
   const [newImageRatio, setNewImageRatio] = useState({
     id: 1,
     aspectRatio: "square",
-    height: "50",
-    width: "50",
   });
 
   return (
-    <div className="xs:my-8 w-full h-full flex flex-col justify-center items-center">
+    <div className="flex items-center h-screen w-full xs:flex-col xs:justify-center">
       <img
-        className={`rounded-xl cursor-pointer w-${newImageRatio.width} h-${newImageRatio.height} aspect-${newImageRatio.aspectRatio}`}
+        className={`rounded-xl w-30 aspect-${newImageRatio.aspectRatio}`}
         src={src}
         alt={alt}
       />
 
-      <div className=" w-70 flex justify-end mt-3">
+      {/* <div className=" w-30 flex justify-end mt-3">
         <button className="p-2 text-sm bg-buttonBG font-Harmattan text-white font-bold rounded-3xl hover:bg-buttonHoover">
           CLAIM
         </button>
-      </div>
+      </div> */}
 
-      <div className="flex mt-3 justify-between w-70">
+      <div className=" mt-3 justify-between w-500 hidden">
         {imageAspectRatio.map((item) => {
           return (
             <div className="flex justify-center items-center">
@@ -41,13 +38,6 @@ const Images = ({ src, alt }) => {
           );
         })}
       </div>
-      <div className="aspect-[2/3] p-0 m-0 hidden bg-themeYellow"></div>
-      <div className="aspect-[3/4] p-0 m-0 hidden"></div>
-      <div className="aspect-[4/5] p-0 m-0 hidden"></div>
-      <div className="aspect-[4/3] p-0 m-0 hidden"></div>
-      <div className="aspect-[3/2] p-0 m-0 hidden"></div>
-      <div className="aspect-video p-0 m-0 hidden"></div>
-      <div className="aspect-square p-0 m-0 hidden"></div>
     </div>
   );
 };
