@@ -68,7 +68,7 @@ const GenerateImage = ({ onSubmit }) => {
                 This field is required
               </p>
             )}
-            <ul className="w-full grid grid-cols-5  mt-4">
+            <ul className="w-full grid grid-cols-4  mt-4">
               {categories.map((item, index) => {
                 return (
                   <li
