@@ -26,7 +26,7 @@ const StartCreating = () => {
           style: `<${data.category}>`,
           guidance_scale: data.guidanceValue,
           results: 1,
-          num_inference_steps: 10,
+          num_inference_steps: data.inferenceValue,
         }),
         headers: {},
         mode: "cors",
