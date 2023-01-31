@@ -96,7 +96,6 @@ const GenerateImage = ({ onSubmit, src, alt }) => {
         inputValue={guidanceValue}
         setInputValue={setGuidanceValue}
         label={"Guidance Scale"}
-        name={"Guidance Scale"}
         max={"20"}
         min={"0"}
       />
@@ -104,7 +103,6 @@ const GenerateImage = ({ onSubmit, src, alt }) => {
         inputValue={inferenceValue}
         setInputValue={setInferenceValue}
         label={"Inference step number"}
-        name={"Inference step number"}
         max={"70"}
         min={"1"}
       />

@@ -1,12 +1,12 @@
-const Scale = ({ label, inputValue, setInputValue, name, max, min }) => {
+const Scale = ({ label, inputValue, setInputValue, max, min }) => {
   return (
     <div className="w-full flex justify-around items-center mb-10 px-80 xs:px-12 lg:px-40 lg:mt-10 xl:px-60 xl:justify-center">
       <form className="flex flex-col items-start justify-end w-50">
-        <label className="text-textBlack text-center mb-2" htmlFor={name}>
+        <label className="text-textBlack text-center mb-2" htmlFor={label}>
           {label}
         </label>
         <input
-          name={name}
+          name={label}
           type="range"
           min={min}
           max={max}
