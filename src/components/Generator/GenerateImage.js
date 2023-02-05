@@ -1,16 +1,17 @@
 import { useState } from "react";
 import Images from "./Images";
-import owl1 from "../../images/owl1.png";
-import GuidanceScale from "./GuidanceScale";
+import Scale from "./Scales";
 import Loader from "./Loader";
 import { categories } from "../../utils/categories";
 
-const GenerateImage = ({ onSubmit }) => {
+const GenerateImage = ({ onSubmit, src, alt }) => {
   const [areImagesShown, setImagesAreShown] = useState(false);
   const [errorIsShown, setErrorIsShown] = useState(false);
   const [loading, setLoading] = useState(false);
   const [inputTextValue, setInputTextValue] = useState("");
   const [guidanceValue, setGuidanceValue] = useState(5);
+  const [inferenceValue, setInferenceValue] = useState(20);
+
   const [category, setCategory] = useState({
     id: 1,
     value: "NORMAL",
@@ -32,13 +33,14 @@ const GenerateImage = ({ onSubmit }) => {
       setTimeout(() => {
         setLoading(false);
         setImagesAreShown(true);
-      }, 2000);
+      }, 9500);
     }
 
     const data = {
       valueText: inputTextValue,
       guidanceValue: parseInt(guidanceValue),
       category: category.value.toLowerCase(),
+      inference: parseInt(inferenceValue),
     };
 
     onSubmit(data);
@@ -68,7 +70,7 @@ const GenerateImage = ({ onSubmit }) => {
                 This field is required
               </p>
             )}
-            <ul className="w-full grid grid-cols-5  mt-4">
+            <ul className="w-full grid grid-cols-4  mt-4">
               {categories.map((item, index) => {
                 return (
                   <li
@@ -90,12 +92,24 @@ const GenerateImage = ({ onSubmit }) => {
           <button className="generateButton bg-themeRed ml-3">GENERATE</button>
         </div>
       </form>
-      <GuidanceScale
-        guidanceValue={guidanceValue}
-        setGuidanceValue={setGuidanceValue}
+      <Scale
+        inputValue={guidanceValue}
+        setInputValue={setGuidanceValue}
+        label={"Guidance Scale"}
+        name={"Guidance Scale"}
+        max={"20"}
+        min={"0"}
+      />
+      <Scale
+        inputValue={inferenceValue}
+        setInputValue={setInferenceValue}
+        label={"Inference step number"}
+        name={"Inference step number"}
+        max={"70"}
+        min={"1"}
       />
       {loading && <Loader />}
-      {areImagesShown && <Images src={owl1} alt="First" />}
+      {areImagesShown && <Images src={src} alt={alt} />}
     </div>
   );
 };
