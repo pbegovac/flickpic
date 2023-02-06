@@ -19,11 +19,18 @@ body {
 }
 
 .paragraph {
-  @apply text-textBlack hover:opacity-60 xs:text-lg lg:text-sm xl:text-lg text-center;
+  color: rgb(13 17 18);
+  text-align: center;
+}
+
+.paragraph:hover {
+  opacity: 0.6;
 }
 
 .list {
-  @apply xs:h-full xs:w-full flex justify-center items-center xs:flex-col xs:p-1 lg:p-0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 input:invalid[focused="true"] {
@@ -53,11 +60,71 @@ input:invalid[focused="true"] ~ span {
 }
 
 .generateButton {
-  @apply cursor-pointer px-4 font-Harmattan text-white hover:opacity-80 font-bold flex justify-center items-center xs:py-3 xs:text-sm lg:py-4 rounded-3xl xl:py-5 xl:w-116;
+  cursor: pointer;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  font-family: "Harmattan";
+  color: white;
+  font-family: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+}
+
+.generateButton:hover {
+  opacity: 0.8;
+}
+
+@media only screen and (min-width: 0px) {
+  .generateButton {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: small;
+  }
+
+  .paragraph {
+    font-size: 1.125rem /* 18px */;
+    line-height: 1.75rem /* 28px */;
+  }
+
+  .list {
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    padding: 0.25rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .generateButton {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  .paragraph {
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+  }
+  .list {
+    padding: 0rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .generateButton {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    width: 7.25rem;
+  }
+  .paragraph {
+    font-size: 1.125rem /* 18px */;
+    line-height: 1.75rem /* 28px */;
+  }
 }
 
 .image {
-  @apply cursor-pointer rounded;
+  cursor: pointer;
+  border-radius: 0.25rem;
 }
 
 .container {

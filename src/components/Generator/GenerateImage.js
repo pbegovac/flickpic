@@ -11,7 +11,6 @@ const GenerateImage = ({ onSubmit, src, alt }) => {
   const [inputTextValue, setInputTextValue] = useState("");
   const [guidanceValue, setGuidanceValue] = useState(5);
   const [inferenceValue, setInferenceValue] = useState(20);
-
   const [category, setCategory] = useState({
     id: 1,
     value: "NORMAL",
@@ -33,8 +32,10 @@ const GenerateImage = ({ onSubmit, src, alt }) => {
       setTimeout(() => {
         setLoading(false);
         setImagesAreShown(true);
-      }, 9500);
+      }, 9999);
     }
+
+    //if imageSrc !== "" => setLoading(false) setImagesAreShown(true)
 
     const data = {
       valueText: inputTextValue,
@@ -96,7 +97,6 @@ const GenerateImage = ({ onSubmit, src, alt }) => {
         inputValue={guidanceValue}
         setInputValue={setGuidanceValue}
         label={"Guidance Scale"}
-        name={"Guidance Scale"}
         max={"20"}
         min={"0"}
       />
@@ -104,7 +104,6 @@ const GenerateImage = ({ onSubmit, src, alt }) => {
         inputValue={inferenceValue}
         setInputValue={setInferenceValue}
         label={"Inference step number"}
-        name={"Inference step number"}
         max={"70"}
         min={"1"}
       />
