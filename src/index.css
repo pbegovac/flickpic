@@ -110,7 +110,7 @@ input:invalid[focused="true"] ~ span {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1024px) {
   .generateButton {
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
