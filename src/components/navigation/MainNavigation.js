@@ -4,23 +4,28 @@ import logo from "../../images/FlickPic.png";
 import LoginIcon from "./LoginIcon";
 
 const MainNavigation = () => {
-  // const [showNavigation, setShowNavigation] = useState(true);
+  const [showNavigation, setShowNavigation] = useState(true);
 
-  // const clickHandler = () => {
-  //   setShowNavigation(!showNavigation);
-  // };
+  const clickHandler = () => {
+    setShowNavigation(!showNavigation);
+  };
 
   return (
     <header className="flex items-center xs:flex-col xs:justify-start xs:h-70 lg:h-12 lg:flex-row lg:justify-around">
-      {/* <Link to="/home" className="h-full flex justify-center items-center"> */}
-      <img
-        src={logo}
-        className="xs:h-12 xs:p-2 lg:h-full"
-        alt="Flickpic logo"
-      />
-      {/* </Link> */}
-      {/* <div onClick={clickHandler} className="cursor-pointer my-2 lg:hidden">
-        <p>---</p>
+      <Link to="/home" className="h-full flex justify-center items-center">
+        <img
+          src={logo}
+          className="xs:h-12 xs:p-2 lg:h-full"
+          alt="Flickpic logo"
+        />
+      </Link>
+      <div
+        onClick={clickHandler}
+        className="cursor-pointer my-2 lg:hidden space-y-2"
+      >
+        <div className="w-8 h-1 bg-themeBlue"></div>
+        <div className="w-8 h-1 bg-themeRed"></div>
+        <div className="w-8 h-1 bg-themeYellow"></div>
       </div>
       {showNavigation && (
         <nav className="h-full  xs:w-full  lg:w-50">
@@ -32,7 +37,7 @@ const MainNavigation = () => {
             </li>
             <li className="list">
               <p className="paragraph">
-                <Link to="/pricing">Pricing</Link>
+                <Link to="/pricing">LinkedIn</Link>
               </p>
             </li>
             <li className="list">
@@ -54,7 +59,7 @@ const MainNavigation = () => {
             <LoginIcon />
           </Link>
         </div>
-      )} */}
+      )}
     </header>
   );
 };
