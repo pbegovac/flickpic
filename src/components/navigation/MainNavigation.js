@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../images/FlickPic.png";
 import LoginIcon from "./LoginIcon";
 
 const MainNavigation = () => {
-  const [showNavigation, setShowNavigation] = useState(true);
+  const [showNavigation, setShowNavigation] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth > 768) {
+      setShowNavigation(true);
+    }
+  }, []);
 
   const clickHandler = () => {
     setShowNavigation(!showNavigation);
@@ -28,26 +34,34 @@ const MainNavigation = () => {
         <div className="w-8 h-1 bg-themeYellow"></div>
       </div>
       {showNavigation && (
-        <nav className="h-full  xs:w-full  lg:w-50">
+        <nav className="h-full xs:w-full lg:w-50">
           <ul className="h-full w-full flex justify-between items-center xs:flex-col lg:flex-row">
             <li className="list">
               <p className="paragraph">
-                <Link to="/">Start Creating❗</Link>
+                <Link to="/" onClick={clickHandler}>
+                  Start Creating❗
+                </Link>
               </p>
             </li>
             <li className="list">
               <p className="paragraph">
-                <Link to="/pricing">LinkedIn</Link>
+                <Link to="/pricing" onClick={clickHandler}>
+                  LinkedIn
+                </Link>
               </p>
             </li>
             <li className="list">
               <p className="paragraph">
-                <Link to="/FAQ">FAQ</Link>
+                <Link to="/FAQ" onClick={clickHandler}>
+                  FAQ
+                </Link>
               </p>
             </li>
             <li className="list">
               <p className="paragraph">
-                <Link to="/BLOG">BLOG</Link>
+                <Link to="/BLOG" onClick={clickHandler}>
+                  BLOG
+                </Link>
               </p>
             </li>
           </ul>
@@ -55,7 +69,7 @@ const MainNavigation = () => {
       )}
       {showNavigation && (
         <div className=" xs:p-2 lg:p-0">
-          <Link to="/login">
+          <Link to="/login" onClick={clickHandler}>
             <LoginIcon />
           </Link>
         </div>
