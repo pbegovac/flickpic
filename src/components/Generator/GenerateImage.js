@@ -71,14 +71,14 @@ const GenerateImage = ({ onSubmit, src, alt }) => {
                 This field is required
               </p>
             )}
-            <ul className="w-full grid grid-cols-4  mt-4">
+            <ul className="w-full mt-4 xs:flex xs:flex-col lg:flex-row lg:justify-around">
               {categories.map((item, index) => {
                 return (
                   <li
                     key={item.id}
                     className={`${
                       categoryIndex === index && "underline"
-                    } text-center text-inputTextColor font-Harmattan py-2 cursor-pointer  rounded-lg hover:underline`}
+                    } text-center text-inputTextColor font-Harmattan py-2 cursor-pointer rounded-lg hover:underline `}
                     onClick={() => {
                       setCategory(item);
                       setCategoryIndex(index);

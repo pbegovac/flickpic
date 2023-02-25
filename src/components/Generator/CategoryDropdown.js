@@ -21,7 +21,7 @@ const CategoryDropdown = ({ category, setCategory }) => {
   }, []);
 
   return (
-    <div className="relative py-3  " ref={toggleElement}>
+    <div className="relative py-3" ref={toggleElement}>
       {inputIsShown && (
         <input
           type="text"

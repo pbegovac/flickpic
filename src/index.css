@@ -63,7 +63,7 @@ input:invalid[focused="true"] ~ span {
   cursor: pointer;
   padding-right: 1rem;
   padding-left: 1rem;
-  font-family: "Harmattan";
+
   color: white;
   font-family: 700;
   display: flex;

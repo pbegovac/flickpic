@@ -1,7 +1,14 @@
+import UploadPictures from "../components/Linkedin_generator/UploadPictures";
+
 const Pricing = () => {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline text">Pricing</h1>
+      <UploadPictures />
+      <div className="h-32 flex justify-center items-center">
+        <button className="generateButton bg-themeRed font-Fredoka">
+          GENERATE
+        </button>
+      </div>
     </div>
   );
 };
